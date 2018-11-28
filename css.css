@@ -1,3 +1,57 @@
-h1{
-    text-align: center;
+body{
+    background-color: gray;
+}
+fieldset{
+    display: inline;
+}
+nav{
+    width: 700px;
+    float: left;
+}
+
+aside{
+    float: right;
+}
+
+.name{    
+    position: relative; bottom: 100px;
+    font-weight: bold; text-align: center; 
+    border:1px solid whitesmoke;
+    width:250px; height: 200px;
+}
+
+.InGame{
+    max-width: 500px; max-height: 400px;
+}
+
+.Portrait{
+    max-width:200px;
+}
+
+nav > .info{
+    position: relative;
+    left:50px;
+}
+
+aside > .info {
+    position: relative;
+    right: 50px;
+}
+
+aside > .Portrait{
+    position: relative;
+    right: 0px;
+}
+
+
+.button{
+    position: absolute; 
+    top: 0px; right: 0px; 
+    padding: 2px;
+    max-width : 50px; max-height: 50px;
+}
+
+.explain{
+    font-weight: bold;
+    color:rgb(78, 63, 95);
 }
