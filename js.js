@@ -1,5 +1,6 @@
 var timerID = null;
-var minute = null;
+var minute = 0;
+var second = 0;
 
 function startClock() {
     var clock = document.getElementById("clock");
@@ -9,18 +10,22 @@ function startClock() {
 
 function timeout(obj){
         
-    timerID++;
+    second++;
 
-    if(timerID >= 60){
-        minute++;  timerID -= 60;
+    if(second >= 60){
+        minute++;  second -= 60;
     }
 
-    if(minute){
-        obj.innerHTML = minute + "분 " + timerID + "초";
+    if(minute<10) obj.innerHTML = "0"+minute+":";
+    else obj.innerHTML = minute+":";
+    if(second<10) obj.innerHTML = obj.innerHTML+"0"+second;
+    else obj.innerHTML = obj.innerHTML+second;
+    /*if(minute){
+        obj.innerHTML = minute + "분 " + second + "초";
     }
     else{
-        obj.innerHTML = timerID + "초";
-    }
+        obj.innerHTML = second + "초";
+    }*/
 }
 
 function gotonext(){
@@ -29,5 +34,8 @@ function gotonext(){
     
 }
 
-
+function stopTimer(id){
+    clearInterval(id);
+    return minute*60+second;
+}
 
