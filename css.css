@@ -108,3 +108,84 @@ stage{
     font-size: 4vw;
     color:#FFFFA1;
 }
+
+
+maintitle{
+    position: absolute;
+    top:20%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color:#FFFFA1;
+    font-size: 7vw;
+    white-space: nowrap;
+}
+gang16{
+    position: absolute;
+    top:50%;
+    left:25%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: #1199BC;
+    font-size: 4vw;
+    background-color: #20FAE4;
+    border: 3vw solid #20FAE4;
+    border-top: 1vw solid #20FAE4;
+    border-bottom: 1vw solid #20FAE4;
+    border-top-left-radius: 5vw 3vw;
+    border-top-right-radius: 5vw 3vw;
+    border-bottom-left-radius: 5vw 3vw;
+    border-bottom-right-radius: 5vw 3vw;
+}
+gang16:hover{
+    opacity: 0.7;
+}
+gang16:active{
+    opacity: 0.5;
+}
+gang32{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color:#AA2AAC;
+    font-size: 4vw;
+    background-color: #20FAE4;
+    border: 3vw solid #20FAE4;
+    border-top: 1vw solid #20FAE4;
+    border-bottom: 1vw solid #20FAE4;
+    border-top-left-radius: 5vw 3vw;
+    border-top-right-radius: 5vw 3vw;
+    border-bottom-left-radius: 5vw 3vw;
+    border-bottom-right-radius: 5vw 3vw;
+}
+gang32:hover{
+    opacity: 0.7;
+}
+gang32:active{
+    opacity: 0.5;
+}
+gang64{
+    position: absolute;
+    top:50%;
+    left:75%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color:#F9202C;
+    font-size: 4vw;
+    background-color: #20FAE4;
+    border: 3vw solid #20FAE4;
+    border-top: 1vw solid #20FAE4;
+    border-bottom: 1vw solid #20FAE4;
+    border-top-left-radius: 5vw 3vw;
+    border-top-right-radius: 5vw 3vw;
+    border-bottom-left-radius: 5vw 3vw;
+    border-bottom-right-radius: 5vw 3vw;
+}
+gang64:hover{
+    opacity: 0.7;
+}
+gang64:active{
+    opacity: 0.5;
+}
