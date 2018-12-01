@@ -8,7 +8,6 @@ img{
     height: 40vh;
     width: 30vw;
     margin: 10px;
-    border: 2px solid #FD3A3A;
 }
 img_div:hover{
     opacity: 0.7;
@@ -21,21 +20,25 @@ image_1{
     position: absolute;
     left: 10px;
     top: 10px;
+    border: 2px solid #FD3A3A;
 }
 image_2{
     position: absolute;
     right: 10px;
     top:10px;
+    border: 2px solid #FD3A3A;
 }
 image_3{
     position: absolute;
     left: 10px;
     bottom: 10px;
+    border: 2px solid #FD3A3A;
 }
 image_4{
     position: absolute;
     right: 10px;
     bottom: 10px;
+    border: 2px solid #FD3A3A;
 }
 vs{
     position: absolute;
@@ -108,7 +111,7 @@ stage{
     font-size: 4vw;
     color:#FFFFA1;
 }
-
+/*여기서부터 메인용*/
 
 maintitle{
     position: absolute;
@@ -188,4 +191,57 @@ gang64:hover{
 }
 gang64:active{
     opacity: 0.5;
+}
+
+/*여기서부터 결과화면*/
+winner{
+    position: absolute;
+    top:15%;
+    left:40%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color:#FFFFA1;
+    font-size: 15vw;
+    white-space: nowrap;
+}
+winner1{
+    position: absolute;
+    top:55%;
+    left:23%;
+    transform: translate(-50%,-50%);
+    border: 2px solid #FD3A3A;
+}
+winner2{
+    position: absolute;
+    top:55%;
+    left:56%;
+    transform: translate(-50%,-50%);
+    border: 2px solid #FD3A3A;
+}
+winnername{
+    position: absolute;
+    top:85%;
+    left:40%;
+    transform: translate(-50%,-50%);
+    font-size: 3vw;
+    white-space: nowrap;
+    color:white;
+}
+restart{
+    position: absolute;
+    top:20%;
+    left:89%;
+    width:15vw;
+    height: 15vw;
+    margin: 10px;
+    transform: translate(-50%,-50%);
+}
+home{
+    position: absolute;
+    top:80%;
+    left:89%;
+    width:15vw;
+    height: 15vw;
+    margin: 10px;
+    transform: translate(-50%,-50%);
 }
