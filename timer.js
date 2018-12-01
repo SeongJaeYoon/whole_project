@@ -17,14 +17,14 @@ function timeout(obj){
         minute++;  second -= 60;
     }
 
-    if(minute<10) obj.innerHTML = "0"+minute+":";
-    else obj.innerHTML = minute+":";
-    if(second<10) obj.innerHTML = obj.innerHTML+"0"+second;
-    else obj.innerHTML = obj.innerHTML+second;
+    if(minute<10) obj.innerHTML = "0" + minute + ":";
+    else obj.innerHTML = minute + ":";
+    if(second<10) obj.innerHTML = obj.innerHTML + "0" + second;
+    else obj.innerHTML = obj.innerHTML + second;
 }
 
 function stopTimer(id){
     clearInterval(id);
-    return minute*60+second;
+    return minute * 60 + second;
 }
 

@@ -3,6 +3,8 @@ var Abnormality = new Array(120);
 var rightab = new Array(60);
 var leftab = new Array(60);
 
+var gang;
+
 function checking(arr, num, now){
 
     var check = 1;
@@ -15,11 +17,10 @@ function checking(arr, num, now){
     return check;  
 
 }
-
-
 function setGame(n){
 
-    var test = document.getElementById("test");
+    gang = n;
+
     var rand = new Array(n);
 
     for(var i = 0; i < n; i++){     // 랜덤배열
@@ -37,5 +38,14 @@ function setGame(n){
     leftab = rand.filter((x, index) => !(index % 2))
 
     window.open("./css와js테스트용.html", "_self");
+
+}
+
+function readyGame(){
+    var Ngang = document.getElementById("gang");
+    Ngang.innerHTML = gang + "강";
+}
+
+function startGame(){
 
 }
