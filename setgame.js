@@ -3,6 +3,11 @@ var Abnormality = new Array(120);
 var rightab = new Array(60);
 var leftab = new Array(60);
 
+var N = getCookie('gang');
+
+console.log(N);
+
+setGame(N);
 function checking(arr, num, now){
 
     var check = 1;
@@ -15,7 +20,6 @@ function checking(arr, num, now){
     return check;  
 
 }
-
 
 function setGame(n){
 
@@ -36,6 +40,10 @@ function setGame(n){
     rightab = rand.filter((x, index) => (index % 2))
     leftab = rand.filter((x, index) => !(index % 2))
 
-    window.open("./css와js테스트용.html", "_self");
-
 }
+
+
+var getCookie = function(name) {
+    var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+    return value? value[2] : null;
+  }
