@@ -91,6 +91,8 @@ var leftab = new Array(60);
 
 var N = getCookie('gang');
 
+console.log(N);
+
 var right_p = document.getElementById("right_portrait");
 var right_I = document.getElementById("right_ingame");
 
@@ -140,9 +142,8 @@ function getCookie(name) {
 function WhoW(obj){
     if(obj.id == 'right') rightab.shift();
     if(obj.id == 'left') leftab.shift();
-
-    // if(rightab.length + leftab == 1)
 }
+
 
 
 
