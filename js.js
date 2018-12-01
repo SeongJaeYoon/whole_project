@@ -20,6 +20,7 @@ function timeout(obj){
     else obj.innerHTML = minute+":";
     if(second<10) obj.innerHTML = obj.innerHTML+"0"+second;
     else obj.innerHTML = obj.innerHTML+second;
+    
     /*if(minute){
         obj.innerHTML = minute + "분 " + second + "초";
     }
