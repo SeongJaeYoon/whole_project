@@ -36,6 +36,6 @@ function setGame(n){
     rightab = rand.filter((x, index) => (index % 2))
     leftab = rand.filter((x, index) => !(index % 2))
 
-    window.open("ingame.html", "_self");
+    window.open("./css와js테스트용.html", "_self");
 
 }
