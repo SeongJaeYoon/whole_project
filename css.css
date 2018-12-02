@@ -24,41 +24,41 @@ image_1{
     position: absolute;
     left: 10px;
     top: 10px;
-    width: 30vw;
-    height: 20vh;
 }
 image_1 img{
     border: 2px solid #FD3A3A;
+    width: 30vw;
+    height: 40vh;
     
 }
 image_2{
     position: absolute;
     right: 10px;
     top:10px;
-    width: 30vw;
-    height: 20vh;
 }image_2 img{
     border: 2px solid #FD3A3A;
+    width: 30vw;
+    height: 40vh;
     
 }
 image_3{
     position: absolute;
     left: 5vw;
     bottom: 30px;
-    width: 40vh;
-    height: 40vh;
 }image_3 img{
     border: 2px solid #FD3A3A;
+    width: 40vh;
+    height: 40vh;
     
 }
 image_4{
     position: absolute;
     right: 5vw;
     bottom: 30px;
-    width: 40vh;
-    height: 40vh;
 }image_4 img{
     border: 2px solid #FD3A3A;
+    width: 40vh;
+    height: 40vh;
     
 }
 vs{
@@ -72,7 +72,7 @@ vs{
 }
 left_name{
     position: absolute;
-    top:50%;
+    top:46%;
     left:15%;
     transform:translate(-50%,-50%);
     text-align: center;
@@ -84,7 +84,7 @@ left_name{
 }
 right_name{
     position: absolute;
-    top:50%;
+    top:46%;
     left:85%;
     transform:translate(-50%,-50%);
     text-align: center;
@@ -96,7 +96,7 @@ right_name{
 }
 left_id{
     position: absolute;
-    top:54%;
+    top:50%;
     left:15%;
     transform:translate(-50%,-50%);
     text-align: center;
@@ -108,7 +108,7 @@ left_id{
 }
 right_id{
     position: absolute;
-    top:54%;
+    top:50%;
     left:85%;
     transform:translate(-50%,-50%);
     text-align: center;
@@ -242,14 +242,22 @@ winner1{
     top:55%;
     left:23%;
     transform: translate(-50%,-50%);
+}
+winner1 img{
     border: 2px solid #FD3A3A;
+    width: 20vw;
+    height: 30vh;
 }
 winner2{
     position: absolute;
     top:55%;
     left:56%;
     transform: translate(-50%,-50%);
+}
+winner2 img{
     border: 2px solid #FD3A3A;
+    width: 40vh;
+    height: 40vh;
 }
 winnername{
     position: absolute;
