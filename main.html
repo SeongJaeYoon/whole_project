@@ -9,6 +9,9 @@
         date.setTime(date.getTime() + exp*24*60*60*1000);
         document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/';
         window.open("./ingame.html", "_self");
+        window.focus();
+        window.moveTo(0,0);
+        window.resizeTo(1980,1080);
       }
     
     </script>
