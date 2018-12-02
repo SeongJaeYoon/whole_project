@@ -122,13 +122,18 @@ function setGame(){
     rightab = rand.filter((x, index) => (index % 2));
     leftab = rand.filter((x, index) => !(index % 2));
 
+    
+    console.log(rand);
+    console.log(leftab);
+    console.log(rightab);
 }
 
 function setting(){
+    cnt_s++;
     var Ngang = document.getElementById("Ngang");
     var Nowgang = document.getElementById("now");
     Ngang.innerHTML = N;
-    Nowgang.innerHTML = cnt_s + 1 + " / " + N / Math.pow(2,cnt_b);
+    Nowgang.innerHTML = cnt_s + " / " + N / Math.pow(2,cnt_b);
 }
 
 function getCookie(cookie_name) {
@@ -137,13 +142,13 @@ function getCookie(cookie_name) {
 }
 
 function WhoW(obj){
-    if(obj.id == 'Right') {
+    if(obj.id == 'Left') {
         leftab.shift();
         var first = rightab[0]; rightab.shift();
         rightab.push(first);
     }
     
-    if(obj.id == 'Left') {
+    if(obj.id == 'Right') {
         rightab.shift();
         var first = leftab[0]; leftab.shift();
         leftab.push(first);
@@ -153,18 +158,20 @@ function WhoW(obj){
 }
 
 function next(){
-    cnt_s++;
+
     if(cnt_s == N / Math.pow(2,cnt_b)){
         cnt_s = 0;
-        nextmatch();
+        nextmatch();        
     }
-    setting();
-    setData();
+    
+        setting();
+        setData();
+    
 }
 
 function nextmatch(){
     cnt_b++; 
-    if(N / Math.pow(2,cnt_b) == 1) {
+    if(N / Math.pow(2,cnt_b) < 1) {
         endGame();
         return;
     }
@@ -177,8 +184,8 @@ function nextmatch(){
     leftab = arr.filter((x, index) => !(index % 2));
 
     console.log(arr);
-    console.log(rightab);
     console.log(leftab);
+    console.log(rightab);
 
 }
 
