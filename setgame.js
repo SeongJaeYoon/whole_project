@@ -89,8 +89,14 @@ Abnormality[110] = { name:'풍운승려', number:'D-01-110'};
 var rightab = new Array(60);
 var leftab = new Array(60);
 
-var N = getCookie('gang');
+
 var cnt_s = 0, cnt_b = 1;
+
+var N = getCookie('gang');
+function getCookie(cookie_name) {
+    var value = document.cookie.match('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
+    return value? value[2] : null;
+}
 function checking(arr, num, now){
 
     var check = 1;
@@ -121,34 +127,16 @@ function setGame(){
 
     rightab = rand.filter((x, index) => (index % 2));
     leftab = rand.filter((x, index) => !(index % 2));
-
-    
-    console.log(rand);
-    console.log(leftab);
-    console.log(rightab);
-}
-
-function setting(){
-    cnt_s++;
-    var Ngang = document.getElementById("Ngang");
-    var Nowgang = document.getElementById("now");
-    Ngang.innerHTML = N;
-    Nowgang.innerHTML = cnt_s + " / " + N / Math.pow(2,cnt_b);
-}
-
-function getCookie(cookie_name) {
-    var value = document.cookie.match('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
-    return value? value[2] : null;
 }
 
 function WhoW(obj){
-    if(obj.id == 'Left') {
+    if(obj.id == 'Right') {
         leftab.shift();
         var first = rightab[0]; rightab.shift();
         rightab.push(first);
     }
     
-    if(obj.id == 'Right') {
+    if(obj.id == 'Left') {
         rightab.shift();
         var first = leftab[0]; leftab.shift();
         leftab.push(first);
@@ -162,11 +150,9 @@ function next(){
     if(cnt_s == N / Math.pow(2,cnt_b)){
         cnt_s = 0;
         nextmatch();        
-    }
-    
+    }    
         setting();
-        setData();
-    
+        setData();   
 }
 
 function nextmatch(){
@@ -183,10 +169,6 @@ function nextmatch(){
     rightab = arr.filter((x, index) => (index % 2));
     leftab = arr.filter((x, index) => !(index % 2));
 
-    console.log(arr);
-    console.log(leftab);
-    console.log(rightab);
-
 }
 
 function endGame(){
@@ -196,11 +178,13 @@ function endGame(){
     window.open("./end.html", "_self");
 }
 
-function setCookie(name, value, exp) {
-    var date = new Date();
-    date.setTime(date.getTime() + exp*24*60*60*1000);
-    document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/';
-  }
+function setting(){
+    cnt_s++;
+    var Ngang = document.getElementById("Ngang");
+    var Nowgang = document.getElementById("now");
+    Ngang.innerHTML = N;
+    Nowgang.innerHTML = cnt_s + " / " + N / Math.pow(2,cnt_b);
+}
 
 
 function setData(){
@@ -228,6 +212,12 @@ function setData(){
 }
 
 
+
+function setCookie(name, value, exp) {
+    var date = new Date();
+    date.setTime(date.getTime() + exp*24*60*60*1000);
+    document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/';
+  }
 
 
 
