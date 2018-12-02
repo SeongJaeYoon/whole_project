@@ -22,43 +22,43 @@ img_div:active{
 }
 image_1{
     position: absolute;
-    left: 10px;
-    top: 10px;
+    left: 4vw;
+    top: 1vw;
 }
 image_1 img{
     border: 2px solid #FD3A3A;
-    width: 30vw;
-    height: 40vh;
+    width: 20vw;
+    height: 13vw;
     
 }
 image_2{
     position: absolute;
-    right: 10px;
-    top:10px;
+    right: 4vw;
+    top:1vw;
 }image_2 img{
     border: 2px solid #FD3A3A;
-    width: 30vw;
-    height: 40vh;
+    width: 20vw;
+    height: 13vw;
     
 }
 image_3{
     position: absolute;
-    left: 5vw;
-    bottom: 30px;
+    left: 6.5vw;
+    bottom: 1vw;
 }image_3 img{
     border: 2px solid #FD3A3A;
-    width: 40vh;
-    height: 40vh;
+    width: 15vw;
+    height: 15vw;
     
 }
 image_4{
     position: absolute;
-    right: 5vw;
-    bottom: 30px;
+    right: 6.5vw;
+    bottom: 1vw;
 }image_4 img{
     border: 2px solid #FD3A3A;
-    width: 40vh;
-    height: 40vh;
+    width: 15vw;
+    height: 15vw;
     
 }
 vs{
@@ -101,7 +101,7 @@ left_id{
     transform:translate(-50%,-50%);
     text-align: center;
     font-size: 1.3vw;
-    margin-top:5px;
+    margin-top:10px;
     margin-bottom:15px;
     white-space: nowrap;
     color: #FFFFA1;
@@ -113,7 +113,7 @@ right_id{
     transform:translate(-50%,-50%);
     text-align: center;
     font-size: 1.3vw;
-    margin-top:5px;
+    margin-top:10px;
     margin-bottom:15px;
     white-space: nowrap;
     color: #FFFFA1;
