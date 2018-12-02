@@ -9,11 +9,9 @@ body{
     
 }
 img{
-    max-width: 100%;
-    max-height: 100%;
-    width: 20vh;
-    height: 20vh;
     margin: 10px;
+    max-width:100%;
+    max-heith:100%;
 }
 img_div:hover{
     opacity: 0.7;
@@ -26,25 +24,42 @@ image_1{
     position: absolute;
     left: 10px;
     top: 10px;
+    width: 30vw;
+    height: 20vh;
+}
+image_1 img{
     border: 2px solid #FD3A3A;
+    
 }
 image_2{
     position: absolute;
     right: 10px;
     top:10px;
+    width: 30vw;
+    height: 20vh;
+}image_2 img{
     border: 2px solid #FD3A3A;
+    
 }
 image_3{
     position: absolute;
-    left: 10px;
-    bottom: 10px;
+    left: 5vw;
+    bottom: 30px;
+    width: 40vh;
+    height: 40vh;
+}image_3 img{
     border: 2px solid #FD3A3A;
+    
 }
 image_4{
     position: absolute;
-    right: 10px;
-    bottom: 10px;
+    right: 5vw;
+    bottom: 30px;
+    width: 40vh;
+    height: 40vh;
+}image_4 img{
     border: 2px solid #FD3A3A;
+    
 }
 vs{
     position: absolute;
@@ -57,38 +72,50 @@ vs{
 }
 left_name{
     position: absolute;
-    top:47%;
-    left:16%;
+    top:50%;
+    left:15%;
     transform:translate(-50%,-50%);
     text-align: center;
-    font-size: 1.5vW;
+    font-size: 1.3vw;
+    margin-top:15px;
+    margin-bottom:10px;
+    white-space: nowrap;
     color: #FFFFA1;
 }
 right_name{
     position: absolute;
-    top:47%;
-    left:84%;
+    top:50%;
+    left:85%;
     transform:translate(-50%,-50%);
     text-align: center;
-    font-size: 1.5vW;
+    font-size: 1.3vw;
+    margin-top:15px;
+    margin-bottom:10px;
+    white-space: nowrap;
     color: #FFFFA1;
 }
 left_id{
     position: absolute;
-    top:51%;
-    left:16%;
+    top:54%;
+    left:15%;
     transform:translate(-50%,-50%);
     text-align: center;
-    font-size: 1.5vW;
+    font-size: 1.3vw;
+    margin-top:5px;
+    margin-bottom:15px;
+    white-space: nowrap;
     color: #FFFFA1;
 }
 right_id{
     position: absolute;
-    top:51%;
-    left:84%;
+    top:54%;
+    left:85%;
     transform:translate(-50%,-50%);
     text-align: center;
-    font-size: 1.5vw;
+    font-size: 1.3vw;
+    margin-top:5px;
+    margin-bottom:15px;
+    white-space: nowrap;
     color: #FFFFA1;
 }
 clock{
