@@ -9,7 +9,7 @@ Abnormality[8] = { name:'빨간 구두', number:'O-04-08'};
 Abnormality[9] = { name:'테레지아', number:'T-09-09'};
 Abnormality[12] = { name:'늙은 여인', number:'O-01-12'};
 Abnormality[15] = { name:'이름이 없는 태아', number:'O-01-15'};
-Abnormality[18] = { name:'벽을 보는 여인', number:'F-01-18'};
+// Abnormality[18] = { name:'벽을 보는 여인', number:'F-01-18'};
 Abnormality[20] = { name:'아무 것도 없는', number:'O-06-20'};
 Abnormality[27] = { name:'1.76 MHz', number:'T-06-27'};
 Abnormality[30] = { name:'노래하는 기계', number:'O-05-30'};
@@ -91,10 +91,6 @@ var leftab = new Array(60);
 
 var N = getCookie('gang');
 var cnt_s = 0, cnt_b = 1;
-
-console.log(N);
-
-setGame();
 function checking(arr, num, now){
 
     var check = 1;
@@ -135,8 +131,8 @@ function setting(){
     Nowgang.innerHTML = cnt_s + 1 + " / " + N / Math.pow(2,cnt_b);
 }
 
-function getCookie(name) {
-    var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+function getCookie(cookie_name) {
+    var value = document.cookie.match('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
     return value? value[2] : null;
 }
 
@@ -145,8 +141,6 @@ function WhoW(obj){
         leftab.shift();
         var first = rightab[0]; rightab.shift();
         rightab.push(first);
-        console.log(rightab);
-        console.log(leftab);
     }
     
     if(obj.id == 'Left') {
@@ -161,22 +155,48 @@ function WhoW(obj){
 function next(){
     cnt_s++;
     if(cnt_s == N / Math.pow(2,cnt_b)){
+        cnt_s = 0;
         nextmatch();
     }
     setting();
-    setData(cnt_s);
+    setData();
 }
 
 function nextmatch(){
-    cnt_b++; cnt_s = 0;
-    var arr = leftab + rightab;
+    cnt_b++; 
+    if(N / Math.pow(2,cnt_b) == 1) {
+        endGame();
+        return;
+    }
+
+    var arr = [];
+    
+    arr = rightab.concat(leftab);
 
     rightab = arr.filter((x, index) => (index % 2));
     leftab = arr.filter((x, index) => !(index % 2));
+
+    console.log(arr);
+    console.log(rightab);
+    console.log(leftab);
+
 }
 
+function endGame(){
+    if(rightab[0]) setCookie("winner", rightab[0], 3);
+    else if(leftab[0]) setCookie("winner", leftab[0], 3);
 
-function setData(now){
+    window.open("./end.html", "_self");
+}
+
+function setCookie(name, value, exp) {
+    var date = new Date();
+    date.setTime(date.getTime() + exp*24*60*60*1000);
+    document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/';
+  }
+
+
+function setData(){
 
     var right_p = document.getElementById("right_portrait");
     var right_I = document.getElementById("right_ingame");
@@ -188,16 +208,16 @@ function setData(now){
     var left_name = document.getElementById("left_name");
     var left_num = document.getElementById("left_number");
     
-    right_p.innerHTML = "<img width='100' src='img/초상화/"+rightab[now]+".png' alt=''>";
-    right_I.innerHTML = "<img width='100' src='img/인게임/"+rightab[now]+".png' alt=''>";
-    left_p.innerHTML = "<img width='100' src='img/초상화/"+leftab[now]+".png' alt=''>";
-    left_I.innerHTML = "<img width='100' src='img/인게임/"+leftab[now]+".png' alt=''>";
+    right_p.innerHTML = "<img src='img/초상화/"+ rightab[0] +".png' alt=''>";
+    right_I.innerHTML = "<img src='img/인게임/"+ rightab[0] +".png' alt=''>";
+    left_p.innerHTML = "<img src='img/초상화/"+ leftab[0] +".png' alt=''>";
+    left_I.innerHTML = "<img src='img/인게임/"+ leftab[0] +".png' alt=''>";
     
-    right_name.innerHTML = Abnormality[rightab[now]].name;
-    right_num.innerHTML = Abnormality[rightab[now]].number;
+    right_name.innerHTML = Abnormality[rightab[0]].name;
+    right_num.innerHTML = Abnormality[rightab[0]].number;
     
-    left_name.innerHTML = Abnormality[leftab[now]].name;
-    left_num.innerHTML = Abnormality[leftab[now]].number;
+    left_name.innerHTML = Abnormality[leftab[0]].name;
+    left_num.innerHTML = Abnormality[leftab[0]].number;
 }
 
 

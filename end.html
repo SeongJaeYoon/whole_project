@@ -2,16 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script type="text/javascript" src="js.js"></script>
     <link href="css.css" rel="stylesheet" type="text/css">
+    <script src="./setgame.js"></script>
+    <script>
+        
+        var winner = getCookie("winner");   
+        
+        function setWData(){
+            var winner_I = document.getElementById("winner인게임");
+            var winner_p = document.getElementById("winner초상화");
+            var winner_name = document.getElementById("winnername");
+
+            winner_p.innerHTML = "<img src='img/초상화/"+ winner +".png' alt=''>";
+            winner_I.innerHTML = "<img src='img/인게임/"+ winner +".png' alt=''>";
+            winner_name.innerHTML = Abnormality[winner].name;
+        }
+        function getCookie(cookie_name) {
+            var value = document.cookie.match('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
+            return value? value[2] : null;
+        }
+
+        function reStart(){
+            window.open("./ingame.html", "_self");
+        }
+
+        function gotohome(){
+            window.open("./main.html", "_self");
+        }
+    
+    </script>
     <title>Document</title>
 </head>
-<body>
-    <winner1><img id="winner인게임" src="img/인게임/0.jpg"></winner1>
-    <winner2><img id="winner초상화" src="img/초상화/0.png"></winner2>
+<body onload="setWData();">
+    <winner1 id="winner인게임"><img src="img/인게임/0.jpg"></winner1>
+    <winner2 id="winner초상화"><img  src="img/초상화/0.png"></winner2>
     <winner><div id="winner">winner</div></winner>
-    <winnername>우승자는 "교육용오뚜기토끼" 입니다</winnername>
-    <restart><img src="img/아이콘/restart.png"> </restart>
-    <home><img src="img/아이콘/home.png"></home>
+    <winnername>우승자는 "<span id = "winnername"></span>" 입니다</winnername>
+    <restart onclick="reStart()"><img src="img/아이콘/restart.png"> </restart>
+    <home onclick="gotohome()"><img src="img/아이콘/home.png"></home>
 </body>
 </html>
