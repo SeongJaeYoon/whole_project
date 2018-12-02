@@ -24,6 +24,7 @@ image_1{
     position: absolute;
     left: 4vw;
     top: 1vw;
+    margin-top:10vh;
 }
 image_1 img{
     border: 2px solid #FD3A3A;
@@ -35,6 +36,7 @@ image_2{
     position: absolute;
     right: 4vw;
     top:1vw;
+    margin-top:10vh;
 }image_2 img{
     border: 2px solid #FD3A3A;
     width: 20vw;
@@ -45,6 +47,7 @@ image_3{
     position: absolute;
     left: 6.5vw;
     bottom: 1vw;
+    margin-bottom:10vh;
 }image_3 img{
     border: 2px solid #FD3A3A;
     width: 15vw;
@@ -55,6 +58,7 @@ image_4{
     position: absolute;
     right: 6.5vw;
     bottom: 1vw;
+    margin-bottom:10vh;
 }image_4 img{
     border: 2px solid #FD3A3A;
     width: 15vw;
