@@ -7,24 +7,24 @@
     <script src = "setgame.js"></script>
     <title>Ingame</title>
 </head>
-<body onload="startClock()">
+<body onload="startClock(); setting();">
 
     <img_div id = "Right" onclick="WhoW(this)">
-        <image_1><img id = "right_ingame" src="./img/인게임/0.jpg"></image_1>
-        <image_3><img id = "right_portrait"src="./img/초상화/0.png"></image_3>
-        <left_name>교육용 오뚜기 토끼</left_name>
-        <left_id>0-00-00</left_id>
+        <image_1 id = "left_ingame"><img  src="./img/인게임/0.png"></image_1>
+        <image_3 id = "left_portrait"><img src="./img/초상화/0.png"></image_3>
+        <left_name id = "left_name" >교육용 오뚜기 토끼</left_name>
+        <left_id id = "left_number">0-00-00</left_id>
     </img_div>
 
     <img_div id = "Left" onclick="WhoW(this)">
-        <image_4><img id = "left_portrait" src="./img/초상화/2.png"></image_4>
-        <image_2><img id = "left_ingame" src="./img/인게임/2.jpg"></image_2>
-        <right_name>불타버린 소녀</right_name>
-        <right_id>F-01-02</right_id>
+        <image_4 id = "right_portrait"><img src="./img/초상화/2.png"></image_4>
+        <image_2 id = "right_ingame"><img  src="./img/인게임/2.png"></image_2>
+        <right_name id ="right_name">불타버린 소녀</right_name>
+        <right_id id = "right_number">F-01-02</right_id>
     </img_div>
         <vs>VS</vs>
         
         <clock id = "clock">now loading</clock>
-        <stage>16강 5/8</stage>
+        <stage ><span id = "Ngang"></span>강 <span id = "now">g / l</span></stage>
     </body>
 </html>

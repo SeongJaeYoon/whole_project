@@ -90,16 +90,11 @@ var rightab = new Array(60);
 var leftab = new Array(60);
 
 var N = getCookie('gang');
+var cnt_s = 0, cnt_b = 1;
 
 console.log(N);
 
-var right_p = document.getElementById("right_portrait");
-var right_I = document.getElementById("right_ingame");
-
-var left_p = document.getElementById("left_portrait");
-var left_I = document.getElementById("left_ingame");
-
-setGame(N);
+setGame();
 function checking(arr, num, now){
 
     var check = 1;
@@ -113,12 +108,11 @@ function checking(arr, num, now){
 
 }
 
-function setGame(n){
+function setGame(){
 
-    var test = document.getElementById("test");
-    var rand = new Array(n);
+    var rand = new Array(N);
 
-    for(var i = 0; i < n; i++){     // 랜덤배열
+    for(var i = 0; i < N; i++){     // 랜덤배열
         var num = Math.floor(Math.random() * 110);
         if(checking(rand, num, i)){
             rand[i] = num;
@@ -129,9 +123,16 @@ function setGame(n){
     
     }
 
-    rightab = rand.filter((x, index) => (index % 2))
-    leftab = rand.filter((x, index) => !(index % 2))
+    rightab = rand.filter((x, index) => (index % 2));
+    leftab = rand.filter((x, index) => !(index % 2));
 
+}
+
+function setting(){
+    var Ngang = document.getElementById("Ngang");
+    var Nowgang = document.getElementById("now");
+    Ngang.innerHTML = N;
+    Nowgang.innerHTML = cnt_s + 1 + " / " + N / Math.pow(2,cnt_b);
 }
 
 function getCookie(name) {
@@ -140,8 +141,63 @@ function getCookie(name) {
 }
 
 function WhoW(obj){
-    if(obj.id == 'right') rightab.shift();
-    if(obj.id == 'left') leftab.shift();
+    if(obj.id == 'Right') {
+        leftab.shift();
+        var first = rightab[0]; rightab.shift();
+        rightab.push(first);
+        console.log(rightab);
+        console.log(leftab);
+    }
+    
+    if(obj.id == 'Left') {
+        rightab.shift();
+        var first = leftab[0]; leftab.shift();
+        leftab.push(first);
+    }
+
+    next();
+}
+
+function next(){
+    cnt_s++;
+    if(cnt_s == N / Math.pow(2,cnt_b)){
+        nextmatch();
+    }
+    setting();
+    setData(cnt_s);
+}
+
+function nextmatch(){
+    cnt_b++; cnt_s = 0;
+    var arr = leftab + rightab;
+
+    rightab = arr.filter((x, index) => (index % 2));
+    leftab = arr.filter((x, index) => !(index % 2));
+}
+
+
+function setData(now){
+
+    var right_p = document.getElementById("right_portrait");
+    var right_I = document.getElementById("right_ingame");
+    var right_name = document.getElementById("right_name");
+    var right_num = document.getElementById("right_number");
+
+    var left_p = document.getElementById("left_portrait");
+    var left_I = document.getElementById("left_ingame");
+    var left_name = document.getElementById("left_name");
+    var left_num = document.getElementById("left_number");
+    
+    right_p.innerHTML = "<img width='100' src='img/초상화/"+rightab[now]+".png' alt=''>";
+    right_I.innerHTML = "<img width='100' src='img/인게임/"+rightab[now]+".png' alt=''>";
+    left_p.innerHTML = "<img width='100' src='img/초상화/"+leftab[now]+".png' alt=''>";
+    left_I.innerHTML = "<img width='100' src='img/인게임/"+leftab[now]+".png' alt=''>";
+    
+    right_name.innerHTML = Abnormality[rightab[now]].name;
+    right_num.innerHTML = Abnormality[rightab[now]].number;
+    
+    left_name.innerHTML = Abnormality[leftab[now]].name;
+    left_num.innerHTML = Abnormality[leftab[now]].number;
 }
 
 
